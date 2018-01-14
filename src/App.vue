@@ -1,8 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/william.jpg">
-    <router-view/>
-  </div>
+    <nav>
+      <div class="container">
+        <ul class="nav__left">
+
+          <!-- Navigation Links -->
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/splash">Splash</router-link></li>
+          <li><router-link to="/todo">To Do </router-link></li>
+          <li><router-link to="/user">User</router-link></li>
+          <li><router-link to="/admin">Admin</router-link></li>
+          <li><router-link to="/super">Super</router-link></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <router-view></router-view>  </div>
 </template>
 
 <script>
@@ -11,13 +25,3 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
