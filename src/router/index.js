@@ -2,15 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // Pages
-import HelloWorld from '@/components/HelloWorld'
 import Splash from '@/pages/Splash'
-import Admin from '@/pages/Admin'
-import User from '@/pages/User'
-import Todo from '@/pages/Todo'
-import Super from '@/pages/Super'
+import Admin from '@/pages/admin/Index'
+import User from '@/pages/user/User'
+import Todo from '@/pages/admin/Todo'
+import Super from '@/pages/super/Super'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Forgot from '@/pages/Forgot'
+
+// Components
 
 Vue.use(Router)
 
@@ -18,18 +19,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/splash',
       name: 'Splash',
       component: Splash
-    },
-    {
-      path: '/todo',
-      name: 'Todo',
-      component: Todo
     },
     {
       path: '/login',
@@ -53,8 +44,16 @@ export default new Router({
     },
     {
       path: '/admin',
-      name: 'Admin',
-      component: Admin
+      name: 'Index',
+      component: Admin,
+      children: [
+        {
+          path: 'todo',
+          name: 'Todo',
+          component: Todo
+        }
+      ]
+
     },
     {
       path: '/super',
